@@ -1,2 +1,1 @@
-"# flask_blog_final" 
-"# flask_blog_final" 
+Flask blog project
