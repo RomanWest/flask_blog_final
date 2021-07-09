@@ -1,0 +1,9 @@
+{% extends "layout.html" %} 
+{% block content %}
+{% for policy in policy %}
+<div class="card">
+     <h2>{{ policy.title | safe}}</h2>
+     {{ policy.content | safe}}
+</div>
+{% endfor %}
+{% endblock content %}

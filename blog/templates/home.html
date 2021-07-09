@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Order posts by...
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{{ url_for('home') }}">Most recent</a>
+    <a class="dropdown-item" href="{{ url_for('home_assend') }}">Oldest</a>
+  </div>
+</div>
+{% for post in posts %}
+<div class="card">
+  <a href="{{ url_for('post', post_id=post.id) }}"><img class="card-img-top" src="{{ url_for('static', filename='img/' + post.image_file) }}" alt="Man in hoody with The Matrix style Java code around him"></a>
+  <div class="card-body"> 
+      <a href="{{ url_for('post', post_id=post.id) }}"><h5 class="card-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>&nbsp <small> </small></h5>
+      <p>by {{ post.user.username }} // {{ post.date.strftime("%d. %B %Y") }}</p>
+
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

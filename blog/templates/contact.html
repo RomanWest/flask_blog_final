@@ -1,0 +1,9 @@
+{% extends "layout.html" %} 
+{% block content %}
+{% for contact in contact %}
+<div class="card">
+     <h2>{{ contact.title | safe}}</h2>
+     {{ contact.content | safe}}
+</div>
+{% endfor %}
+{% endblock content %}

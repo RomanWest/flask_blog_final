@@ -1,0 +1,9 @@
+{% extends "layout.html" %} 
+{% block content %}
+{% for about in about %}
+<div class="card">
+     <h2>{{ about.title | safe}}</h2>
+     {{ about.content | safe}}
+</div>
+{% endfor %} 
+{% endblock content %}
